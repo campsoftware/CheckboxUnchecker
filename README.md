@@ -6,12 +6,12 @@ One-liner to untick every checkbox on a webpage. Perfect for PACER, government p
 
 ## Pick your path
 
-| Platform | Method | Best for |
-|----------|--------|----------|
-| **Mac** | [AppleScript (Safari)](#mac-applescript-safari) | Automating / Shortcuts / Script Editor |
-| **Mac** | [Browser Console](#mac-browser-console) | Any Mac browser, one-off use |
-| **Windows** | [Browser Console](#windows-browser-console) | Any Windows browser, one-off use |
-| **Any** | [Bookmarklet](#universal-bookmarklet) | Reusable one-click button in your bookmarks bar |
+| Platform    | Method                                          | Best for                                        |
+| ----------- | ----------------------------------------------- | ----------------------------------------------- |
+| **Mac**     | [AppleScript (Safari)](#mac-applescript-safari) | Automating / Shortcuts / Script Editor          |
+| **Any**     | [Bookmarklet](#universal-bookmarklet)           | Reusable one-click button in your bookmarks bar |
+| **Mac**     | [Browser Console](#mac-browser-console)         | Any Mac browser, one-off use                    |
+| **Windows** | [Browser Console](#windows-browser-console)     | Any Windows browser, one-off use                |
 
 ---
 
@@ -39,6 +39,22 @@ end tell
 
 ---
 
+## Universal: Bookmarklet
+
+Add a one-click button to your bookmarks bar that works on **any** site.
+
+1. Create a new bookmark (any URL — e.g., `google.com`).
+2. Edit it and replace the URL with this:
+
+```javascript
+javascript:(function(){document.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.checked=false);})();
+```
+
+3. Name it **Uncheck All**.
+4. Click it whenever you’re on a page with annoying pre-ticked boxes.
+
+---
+
 ## Mac: Browser Console
 
 1. Press `Cmd + Option + J` (Chrome/Brave/Edge) or `Cmd + Option + K` (Firefox).  
@@ -60,22 +76,6 @@ document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = f
 ```javascript
 document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
 ```
-
----
-
-## Universal: Bookmarklet
-
-Add a one-click button to your bookmarks bar that works on **any** site.
-
-1. Create a new bookmark (any URL — e.g., `google.com`).
-2. Edit it and replace the URL with this:
-
-```javascript
-javascript:(function(){document.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.checked=false);})();
-```
-
-3. Name it **Uncheck All**.
-4. Click it whenever you’re on a page with annoying pre-ticked boxes.
 
 ---
 
